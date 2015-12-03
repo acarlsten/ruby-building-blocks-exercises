@@ -53,10 +53,11 @@ def caesar_cipher(phrase, number = 0)
   complete = postcipher.join
   original = spaces.join('')
 
-  puts complete.to_s
-  puts original
-  puts midcipher.to_s
-  puts modcipher.to_s
+  puts 'Encrypted phrase: ' + complete.to_s
+  puts 'Original phrase: ' + original
 end
-
-caesar_cipher('ZEBRA zebra, ADAM adam, ROTFRUKT rotfrukt', 1)
+puts "Enter a phrase."
+x = gets.chomp
+puts "How far to shift it? Anything from 0 to 25 is valid."
+y = gets.chomp
+caesar_cipher(x, y.to_i)
