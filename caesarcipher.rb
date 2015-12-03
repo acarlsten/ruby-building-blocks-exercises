@@ -19,7 +19,8 @@ def caesar_cipher(phrase, number = 0)
   hash2["!"] = 202
   hash2["?"] = 203
   hash2[":"] = 204
-  hash2[";"] = 205 # There's bound to be a better way to add characters and whitespace
+  hash2[";"] = 205
+  hash2[","] = 206 # There's bound to be a better way to add characters and whitespace
 
   superhash.merge!(hash2)
 
@@ -31,7 +32,7 @@ def caesar_cipher(phrase, number = 0)
       n += number
       if n > 200
         n -= number
-      elsif n >= 125 && n < 200
+      elsif n > 125 && n < 200
         n -= 26
       elsif n > 25 && n < 100
         n -= 26
@@ -54,7 +55,8 @@ def caesar_cipher(phrase, number = 0)
 
   puts complete.to_s
   puts original
+  puts midcipher.to_s
+  puts modcipher.to_s
 end
 
-caesar_cipher('This video shows all the differences between Photoshop CS6 and Photoshop CC 2015. Watching the entire video can be very useful for those who are still using Photoshop CS6 or older versions and wondering whether it is time to upgrade and also for those who are already using Photoshop CC 2015 but never had time to go through the new features released since CS6.
-Instead of a detailed feature tour I decided to go through everything quickly covering each new feature in less than 15 seconds. To make it easier to navigate within the video I included a list in the description below. Although this list is very detailed it is still not extensive as there are many minor changes to preferences and the user interface that I won’t be covering in this video.', 20)
+caesar_cipher('ZEBRA zebra, ADAM adam, ROTFRUKT rotfrukt', 1)
