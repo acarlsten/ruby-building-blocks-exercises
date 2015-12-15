@@ -56,6 +56,8 @@ def caesar_cipher(phrase, number = 0)
   puts 'Encrypted phrase: ' + complete.to_s
   puts 'Original phrase: ' + original
 end
+
+
 puts "Enter a phrase."
 x = gets.chomp
 puts "How far to shift it? Anything from 0 to 25 is valid."
