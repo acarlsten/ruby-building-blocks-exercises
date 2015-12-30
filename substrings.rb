@@ -1,8 +1,15 @@
 def substrings(text, dictionary)
-  x = text.split('')
-  p x
+  result = Hash.new
+  text.downcase!
+  dictionary.each do |dictword|
+    if text.include?(dictword)
+      x = text.scan(dictword).length
+      result.store(dictword, x)
+    end
+  end
+  result
 end
 
-dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+dictionary = ["below", "down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
-substrings("Hello", dictionary)
+p substrings("Howdy partner, sit down! How's it going?", dictionary)
